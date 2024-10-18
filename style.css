@@ -1,0 +1,24 @@
+#body
+{
+    display: flex;
+}
+.MainTitle
+{
+
+}
+.Menu
+{
+    #Burger
+    {
+        width: 150px;
+    }
+    #HotDog
+    {
+        width: 150px;
+    }
+
+}
+.Menubar
+{
+    background-color: palegoldenrod;
+}
