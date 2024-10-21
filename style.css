@@ -20,5 +20,9 @@
 }
 .Menubar
 {
+    Display: flex;
+    height: 100%;
+    width: 100%;
+    gap: 5%;
     background-color: palegoldenrod;
 }
