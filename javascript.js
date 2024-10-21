@@ -12,13 +12,13 @@ function addCart3()
 }
 function addCart4()
 {
-    window.location.href = "Cart";
+    window.location.href = "../Cart";
 }
 function addCart5()
 {
-    window.location.href = "Cart";
+    window.location.href = "../Cart";
 }
 function addCart6()
 {
-    window.location.href = "Cart";
+    window.location.href = "../Cart";
 }
