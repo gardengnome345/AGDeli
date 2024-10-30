@@ -1,4 +1,5 @@
 let items = [];
+let total = "";
 function tpBurger()
 {
     window.location.href = "Burger";
@@ -45,6 +46,7 @@ function loadCart()
         x += "<p>" + items[y].price + "</p>"
     }
     document.getElementById("wiz").innerHTML = x;
+    document.getElementById("totalcost").innerHTML= total;
 }
 function burgerSort()
 {
