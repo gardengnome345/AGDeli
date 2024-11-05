@@ -61,16 +61,15 @@ function addCart2(x, y)
         toppings.push("Tomatoes");
     }
 
-
-    var saving =
-        {
-            name: x, price: y, toppings: z
-        }
+    var saving = {
+        name: "Pizza (" + x + ")",
+        price: y,
+        toppings: toppings
+    };
     items.push(saving);
     localStorage.setItem("wiz", JSON.stringify(items));
-
-
-
+    update();
+    loadCart();
 }
 function loadCart()
 {
@@ -115,4 +114,8 @@ function pizzaSort()
             return arr[i];
         }
     }
+}
+function getToppings()
+{
+
 }
