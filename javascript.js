@@ -73,14 +73,29 @@ function addCart2(x, y)
 }
 function loadCart()
 {
-    load()
+    load();
     let x = "";
-    for (let y = items.length - 1; y >= 0; y--)
+    for (let i = 0; i < items.length; i++)
     {
-        x += "<p>" + items[y].price + "</p>"
+        x += "<p>" + items[i].name + " - $" + items[i].price;
+
+        if (items[i].toppings && items[i].toppings.length > 0)
+        {
+            x += " (Toppings: ";
+            for (let j = 0; j < items[i].toppings.length; j++)
+            {
+                x += items[i].toppings[j];
+                if (j < items[i].toppings.length - 1)
+                {
+                    x += ", ";
+                }
+            }
+            x += ")";
+        }
     }
+    x += "</p>";
     document.getElementById("wiz").innerHTML = x;
-    document.getElementById("totalcost").innerHTML= total;
+    update();
 }
 function burgerSort()
 {
@@ -115,7 +130,20 @@ function pizzaSort()
         }
     }
 }
-function getToppings()
+function getSelectedToppings()
 {
-
+    let toppings = [];
+    if (document.getElementById("pineapples").checked)
+    {
+        toppings.push("Pineapples");
+    }
+    if (document.getElementById("artichokes").checked)
+    {
+        toppings.push("Artichokes");
+    }
+    if (document.getElementById("tomatoes").checked)
+    {
+        toppings.push("Tomatoes");
+    }
+    return toppings;
 }

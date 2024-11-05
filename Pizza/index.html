@@ -44,15 +44,22 @@ What type of Pizza?
 
 <div>
   Extra Toppings:
-
+  <div>
+    <input type="checkbox" id="pineapples" value="Pineapples">
+    <label for="pineapples">Add Pineapples</label>
+  </div>
+  <div>
+    <input type="checkbox" id="artichokes" value="Artichokes">
+    <label for="artichokes">Add Artichokes</label>
+  </div>
+  <div>
+    <input type="checkbox" id="tomatoes" value="Tomatoes">
+    <label for="tomatoes">Add Tomatoes</label>
+  </div>
 </div>
 
-
-
-
-
 <div class = "pizzaAdd">
-  <button onclick = "addCart2(pizzaSort(), 2)">
+  <button onclick = "addCart2(pizzaSort(), 2, getSelectedToppings())">
     Add to Cart
   </button>
 </div>
