@@ -1,12 +1,16 @@
-#body
+body
 {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 .MainTitle
 {
-
+    font-size: 40px;
 }
-.Menu
+Menu
 {
     #Burger
     {
@@ -21,6 +25,7 @@
 .Menubar
 {
     Display: flex;
+    justify-content: center;
     height: 100%;
     width: 100%;
     gap: 5%;
