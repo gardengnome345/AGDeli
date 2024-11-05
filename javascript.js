@@ -1,5 +1,5 @@
 let items = [];
-let total = "";
+let total = 0;
 function tpBurger()
 {
     window.location.href = "Burger";
@@ -14,28 +14,63 @@ function tpPizza()
 }
 function load()
 {
-    if (localStorage.getItem("wiz"))
+    const savedItems = localStorage.getItem("wiz");
+    if (savedItems)
     {
-        items = JSON.parse(localStorage.getItem("wiz"));
+        items = JSON.parse(savedItems);
+    }
+    else
+    {
+        items = [];
     }
 }
-function addCart(x, y)
+function update()
 {
+    total = 0;
+    for (let i = 0; i < items.length; i++)
+    {
+        total += items[i].price;
+    }
+    document.getElementById("totalcost").innerHTML = total;
+}
+function addCart(x, y, type)
+{
+    load();
     var saving =
         {
-            name: x, price: y
+            name: type + " (" + x + ")", price: y
         }
     items.push(saving);
     localStorage.setItem("wiz", JSON.stringify(items));
+    update();
 }
-function addCart2(x, y, z)
+function addCart2(x, y)
 {
+    load();
+    let toppings = [];
+    if (document.getElementById("pineapples").checked)
+    {
+        toppings.push("Pineapples");
+    }
+    if (document.getElementById("artichokes").checked)
+    {
+        toppings.push("Artichokes");
+    }
+    if (document.getElementById("tomatoes").checked)
+    {
+        toppings.push("Tomatoes");
+    }
+
+
     var saving =
         {
             name: x, price: y, toppings: z
         }
     items.push(saving);
     localStorage.setItem("wiz", JSON.stringify(items));
+
+
+
 }
 function loadCart()
 {
